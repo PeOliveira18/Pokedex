@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Header from "./Components/header"
 
 
 export const AppContainer = styled.div`
@@ -11,7 +12,7 @@ function App() {
 
   return (
     <AppContainer>
-      
+      <Header/>
     </AppContainer>
   )
 }
