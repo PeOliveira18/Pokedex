@@ -1,5 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+    .card-pokemon{
+        @apply border-[1px] border-b-2 border-cyan-700 shadow-sm rounded p-5 items-center cursor-pointer
+    }
+} 
 
 

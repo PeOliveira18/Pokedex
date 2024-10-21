@@ -1,9 +1,9 @@
 import axios from "axios"
 
-export const getPokemons = async () => {
+export const getPokemons = async (limitePokemons) => {
     try {
         var endpoints = []
-        for (var i = 1; i <= 100; i++) {
+        for (var i = 1; i <= limitePokemons; i++) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`)
         }
 
