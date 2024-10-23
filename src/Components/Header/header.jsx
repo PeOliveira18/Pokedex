@@ -11,11 +11,7 @@ function Header() {
         console.log(search);
         
     }
-
-    const handleSearch = () => {
-        
-    }
-
+    
     return (  
         <header className='flex justify-between items-center bg-amber-200 p-5'>
             <div className=''>
