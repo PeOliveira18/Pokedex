@@ -4,7 +4,7 @@ export const getEvolutionChain = async (idPokemons) => {
     try{
         var endpoint = []
         for (var i = 1; i <= idPokemons; i++){
-            endpoint.push(`https://pokeapi.co/api/v2/evolution-chain/${i}`)
+            endpoint.push(`https://pokeapi.co/api/v2/pokemon-species/${i}`)
         }
 
         const response = await axios.all(endpoint.map((endpoint) => axios.get(endpoint)))

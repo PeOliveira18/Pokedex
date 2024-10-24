@@ -1,6 +1,6 @@
 export const coresTipos = {
     normal: "#C2C2A1",
-    flying: "#BAB0D5",
+    flying: "#829EDB",
     ghost: "#735797",
     dark: "#333",
     steel: "#CCCCDE",
@@ -16,5 +16,5 @@ export const coresTipos = {
     psychic: "#9B7FA6",
     ice: "#7FCCEC",
     rock: "#a6aab6",
-    dragon: "#F9BE00",
+    dragon: "#1582E7",
 }

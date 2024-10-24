@@ -27,7 +27,7 @@ function PokemonCard({ pokemon, dadosEvolucao }) {
                     </div>
                 </div>
                 <div className="flex relative items-center">
-                    <img src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} className="w-3h-32 h-32 z-20"/>
+                    <img src={pokemon.sprites.other.showdown.front_default} alt={pokemon.name} className="w-3h-32 h-32 z-20"/>
                     <span className="absolute right-7 -top-1 text-5xl text-[#FFFFFF33] z-10">{`#${pokemon.id.toString().padStart(3, '000')}`}</span>
                 </div>
             </div>

@@ -49,7 +49,7 @@ function DrawerCard({ abreModal, setAbreModal, pokemon, evolucoes, cor }) {
                             <div className="mt-5">
                                 <About categoria={categoria} pokemon={pokemon}/>
                                 <Stats categoria={categoria} pokemon={pokemon}/>
-                                <Evolucoes categoria={categoria} evolucoes={evolucoes} pokemon={pokemon}/>
+                                <Evolucoes categoria={categoria} evolucoes={evolucoes}/>
                             </div>
                         </div>
                     </div>
