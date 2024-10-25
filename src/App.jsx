@@ -5,6 +5,7 @@ import PokemonCard from "./Components/PokemonCard/pokemonCard";
 import { getPokemons } from "./Services/getPokemons";
 import Skeletons from "./Components/Skeletons/skletons";
 import { getEvolutionChain } from "./Services/getEvolutions";
+import PokemonsFiltrados from "./Components/FiltraPokemon/filtraPokemon";
 
 export const AppContainer = styled.div`
   margin: 0;
@@ -16,7 +17,16 @@ function App() {
   const [pokemons, setPokemons] = useState([])
   const [evolucoes, setEvolucoes] = useState([])
   const [pokemonsFiltrados, setPokemonsFiltrados] = useState([])
-  const limiteCardsPokemons = 151
+  const limiteCardsPokemons = 500
+
+  const filtraPokemon = (name) => {
+    if (name === "") {
+        setPokemonsFiltrados(pokemons);
+    } else {
+        const pokemonFiltrado = pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(name.toLowerCase()))
+        setPokemonsFiltrados(pokemonFiltrado)
+    }
+}
 
   useEffect(() => {
     const fetchPokemons = async () => {
@@ -29,15 +39,6 @@ function App() {
     fetchPokemons()
   }, []);
 
-  const filtraPokemon = (name) => {
-    if (name === "") {
-      setPokemonsFiltrados(pokemons);
-    } else {
-      const pokemonFiltrado = pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(name.toLowerCase()))
-      setPokemonsFiltrados(pokemonFiltrado)
-    }
-  }
-
   return (
     <AppContainer>
       <Header />
@@ -47,11 +48,7 @@ function App() {
       {pokemons.length === 0 ? (
         <Skeletons arr={limiteCardsPokemons}/>
       ) : (
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center m-auto gap-x-10 gap-y-7 p-5 capitalize">
-        {pokemonsFiltrados.map((pokemon, id) => (
-          <PokemonCard key={id} pokemon={pokemon} dadosEvolucao={evolucoes}/>
-        ))}
-      </div>
+        <PokemonsFiltrados pokemons={pokemons} pokemonsFiltrados={pokemonsFiltrados} setPokemonsFiltrados={setPokemonsFiltrados} evolucoes={evolucoes}/>
       )}
     </AppContainer>
   )

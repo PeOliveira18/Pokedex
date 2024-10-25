@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { coresTipos } from "./coresTipos";
+import { coresTipos } from "../../utils/coresTipos";
 import DrawerCard from "../Drawer/drawerCard";
+import BotaoTipos from "../BotaoTipos/botaoTipos";
 
 function PokemonCard({ pokemon, dadosEvolucao }) {
     const tipoPrincipal = pokemon.types[0].type.name
@@ -19,15 +20,11 @@ function PokemonCard({ pokemon, dadosEvolucao }) {
                         <p className="text-white font-extrabold text-3xl">{pokemon.name}</p>
                     </div>
                     <div className="">
-                        {pokemon.types.map((tipo, index) => (
-                            <button key={index} className="rounded-full px-3 flex capitalize py-1 mt-2 text-white font-semibold bg-[#FFFFFF33]">
-                                {tipo.type.name}
-                            </button>
-                        ))}
+                        <BotaoTipos pokemon={pokemon}/>
                     </div>
                 </div>
-                <div className="flex relative items-center">
-                    <img src={pokemon.sprites.other.showdown.front_default} alt={pokemon.name} className="w-3h-32 h-32 z-20"/>
+                <div className="flex relative items-end">
+                    <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} className="w-40 h-40 z-20"/>
                     <span className="absolute right-7 -top-1 text-5xl text-[#FFFFFF33] z-10">{`#${pokemon.id.toString().padStart(3, '000')}`}</span>
                 </div>
             </div>

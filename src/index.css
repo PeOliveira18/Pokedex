@@ -15,7 +15,7 @@
     }
 
     .titulo-caracteristicas-pokemon{
-        @apply flex items-center justify-between max-w-80 text-left
+        @apply grid items-center gap-y-3
     }
 
     .caracteristicas-pokemon{
