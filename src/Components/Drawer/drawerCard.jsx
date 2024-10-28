@@ -1,6 +1,5 @@
 import { useState } from "react";
 import About from "../About/about";
-import Evolucoes from "../Evolucoes/evolucoes";
 import Stats from "../Stats/stats";
 import FormaAlternativa from "../FormaAlternativa/formaAlternativa";
 import BotaoTipos from "../BotaoTipos/botaoTipos";
@@ -45,7 +44,7 @@ function DrawerCard({ abreModal, setAbreModal, pokemon, evolucoes, cor }) {
                             <div className="mt-5">
                                 <About categoria={categoria} pokemon={pokemon}/>
                                 <Stats categoria={categoria} pokemon={pokemon}/>
-                                <Evolucoes categoria={categoria} evolucoes={evolucoes}/>
+                                {/* <Evolucoes categoria={categoria} evolucoes={evolucoes}/> */}
                                 <FormaAlternativa categoria={categoria} pokemon={pokemon}/>
                             </div>
                         </div>

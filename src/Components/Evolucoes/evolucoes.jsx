@@ -1,4 +1,4 @@
-    function Evolucoes({ categoria, evolucoes }) {
+/*     function Evolucoes({ categoria, evolucoes }) {
         
         return (
             <div>
@@ -26,4 +26,4 @@
         );
     }
 
-    export default Evolucoes;
+    export default Evolucoes; */

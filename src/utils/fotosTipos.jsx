@@ -15,6 +15,7 @@ import psychic from "../images/tipos/psychic.svg"
 import rock from "../images/tipos/rock.svg"
 import steel from "../images/tipos/steel.svg"
 import water from "../images/tipos/water.svg"
+import ghost from "../images/tipos/ghost.svg"
 
 export const fotosTipos = {
     bug,
@@ -22,6 +23,7 @@ export const fotosTipos = {
     dragon,
     electric,
     fairy,
+    ghost,
     fighting,
     fire,
     flying,
