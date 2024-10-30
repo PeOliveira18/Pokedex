@@ -8,35 +8,35 @@ import PokemonsFiltrados from "../FiltraPokemon/filtraPokemon.jsx";
 import BuscaPokemon from "../BuscaPokemon/buscaPokemon";
 
 function Home() {
-    const [pokemons, setPokemons] = useState([]);
-    const [pokemonsFiltrados, setPokemonsFiltrados] = useState([]);
-    const [evolucoes, setEvolucoes] = useState([]);
-    const [limite, setLimite] = useState(51);
-    const [loading, setLoading] = useState(false);
+    const [pokemons, setPokemons] = useState([])
+    const [pokemonsFiltrados, setPokemonsFiltrados] = useState([])
+    const [evolucoes, setEvolucoes] = useState([])
+    const [limite, setLimite] = useState(51)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         const fetchPokemons = async () => {
             setLoading(true);
-            const dados = await getPokemons(limite);
-            const dadosEvolucoes = await getEvolutionChain(limite);
-            setPokemons(dados);
-            setEvolucoes(dadosEvolucoes);
-            setPokemonsFiltrados(dados);
-            setLoading(false);
-        };
-        fetchPokemons();
+            const dados = await getPokemons(limite)
+            const dadosEvolucoes = await getEvolutionChain(limite)
+            setPokemons(dados)
+            setEvolucoes(dadosEvolucoes)
+            setPokemonsFiltrados(dados)
+            setLoading(false)
+        }
+        fetchPokemons()
     }, [limite]);
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.innerHeight + document.documentElement.scrollTop + 100 >= document.documentElement.offsetHeight) {
-                setLimite(prev => prev + 51);
+                setLimite(prev => prev + 51)
             }
-        };
+        }
         
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [])
 
     return (
         <AppContainer>

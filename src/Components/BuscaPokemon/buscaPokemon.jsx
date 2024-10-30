@@ -7,29 +7,29 @@ function BuscaPokemon({ pokemons, setPokemonsFiltrados }) {
     
     useEffect(() => {
         const fetchAllPokemons = async () => {
-            const allPokemons = await getPokemons(1025);
-            setTodosPokemons(allPokemons);
-        };
-        fetchAllPokemons();
-    }, []);
+            const allPokemons = await getPokemons(1025)
+            setTodosPokemons(allPokemons)
+        }
+        fetchAllPokemons()
+    }, [])
 
     const filtraPokemon = useCallback(
         debounce((name) => {
             if (name === "") {
-                setPokemonsFiltrados(todosPokemons);
+                setPokemonsFiltrados(todosPokemons)
             } else {
                 const pokemonFiltrado = todosPokemons.filter((pokemon) =>
                     pokemon.name.toLowerCase().includes(name.toLowerCase())
-                );
-                setPokemonsFiltrados(pokemonFiltrado);
+                )
+                setPokemonsFiltrados(pokemonFiltrado)
             }
         }, 300),
         [todosPokemons]
-    );
+    )
 
     const handleChange = (e) => {
-        filtraPokemon(e.target.value);
-    };
+        filtraPokemon(e.target.value)
+    }
     
     return (  
         <div className="relative">
