@@ -1,4 +1,4 @@
-/* import axios from "axios"
+import axios from "axios"
 
 export const getEvolutionChain = async (idPokemons) => {
     try{
@@ -12,4 +12,4 @@ export const getEvolutionChain = async (idPokemons) => {
     }catch (error){
         console.log(`Erro au buscar o pokemon. ${error}`)
     }
-} */
+}
