@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+    .card-pokemon{
+        @apply flex justify-between rounded-[30px] pt-7 pr-4 pb-7 pl-7 cursor-pointer h-60 w-full top-0 duration-300 hover:-translate-y-2 hover:shadow-xl
+    }
+
+    .btn-card{
+        @apply border-b-[3px] -mb-[1px] pb-3 px-4 border-transparent text-gray-400 font-bold hover:text-black text-lg hover:duration-500
+    }
+
+    .btn-card-ativo{
+        @apply border-cyan-800
+    }
+
+    .titulo-caracteristicas-pokemon{
+        @apply grid items-center gap-y-3
+    }
+
+    .caracteristicas-pokemon{
+        @apply text-black font-bold text-left
+    }
+} 
+
+
