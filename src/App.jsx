@@ -25,6 +25,7 @@ function App() {
       <img src={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'} alt="" />
     </AppContainer>
   )
+  
 }
 
 export default App
