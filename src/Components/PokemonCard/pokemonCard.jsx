@@ -28,7 +28,7 @@ function PokemonCard({ pokemon, dadosEvolucao }) {
                     <span className="absolute right-7 -top-1 text-5xl text-[#FFFFFF33] z-10">{`#${pokemon.id.toString().padStart(3, '000')}`}</span>
                 </div>
             </div>
-            <DrawerCard abreModal={abreModal} setAbreModal={setAbreModal} pokemon={pokemon} evolucoes={dadosEvolucao} cor={cor}/>
+            <DrawerCard abreModal={abreModal} setAbreModal={setAbreModal} pokemon={pokemon} cor={cor}/>
         </>
     );
 }

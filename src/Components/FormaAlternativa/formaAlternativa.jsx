@@ -10,8 +10,8 @@ function FormaAlternativa({categoria, pokemon}) {
 
     return (  
         <div>
-            {categoria == 3 && (
-                <div className="flex justify-center">
+            {categoria == 2 && (
+                <div className="flex justify-center ">
                     <Loader imageSrc={pokemon.sprites.other['official-artwork'].front_shiny} alt={pokemon.name} w={40} h={40}/>
                 </div>
             )}

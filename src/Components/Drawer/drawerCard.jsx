@@ -5,9 +5,8 @@ import FormaAlternativa from "../FormaAlternativa/formaAlternativa";
 import BotaoTipos from "../BotaoTipos/botaoTipos";
 import Loader from "../Loader/loader";
 import BtnDetalhesPokemons from "../BtnDetalhesPokemons/btndetalhesPokemons";
-import Evolucoes from "../Evolucoes/evolucoes";
 
-function DrawerCard({ abreModal, setAbreModal, pokemon, evolucoes, cor }) {
+function DrawerCard({ abreModal, setAbreModal, pokemon, cor }) {
     const [categoria, setCategoria] = useState(0)
 
     const closeModal = () => {
@@ -45,7 +44,6 @@ function DrawerCard({ abreModal, setAbreModal, pokemon, evolucoes, cor }) {
                             <div className="mt-5">
                                 <About categoria={categoria} pokemon={pokemon}/>
                                 <Stats categoria={categoria} pokemon={pokemon}/>
-                                <Evolucoes categoria={categoria} evolucoes={evolucoes}/>
                                 <FormaAlternativa categoria={categoria} pokemon={pokemon}/>
                             </div>
                         </div>
