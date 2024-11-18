@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Home from "./Components/pages/home";
+import ErrorBoundary from "./Components/Error/errorBondary";
 
 export const AppContainer = styled.div`
   margin: 0;
@@ -9,7 +10,7 @@ export const AppContainer = styled.div`
 
 function App() {
   return (
-    <Home/>
+      <Home/>
   )
   
 }

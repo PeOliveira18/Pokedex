@@ -9,7 +9,7 @@ import BuscaPokemon from "../BuscaPokemon/buscaPokemon";
 function Home() {
     const [pokemons, setPokemons] = useState([])
     const [pokemonsFiltrados, setPokemonsFiltrados] = useState([])
-    const [limite, setLimite] = useState(51)
+    const [limite, setLimite] = useState(25)
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -21,17 +21,16 @@ function Home() {
             setLoading(false)
         }
         fetchPokemons()
-    }, [limite]);
 
-    useEffect(() => {
         const handleScroll = () => {
-            if (window.innerHeight + document.documentElement.scrollTop + 100 >= document.documentElement.offsetHeight) {
-                setLimite(prev => prev + 51)
+            if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight && limite <= 1025) {
+                setLimite(prev => prev + 50)
             }
         }
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [])
+    }, [limite]);
+
 
     return (
         <AppContainer>
