@@ -14,22 +14,28 @@ function Home() {
 
     useEffect(() => {
         const fetchPokemons = async () => {
-            setLoading(true);
+            setLoading(true)
             const dados = await getPokemons(limite)
             setPokemons(dados)
             setPokemonsFiltrados(dados)
             setLoading(false)
         }
         fetchPokemons()
+        
+    }, [limite]);
 
+    useEffect(() => {
         const handleScroll = () => {
-            if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight && limite <= 1025) {
-                setLimite(prev => prev + 50)
+            if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight) {
+                setLimite(prev => {
+                    if(prev >= 1025) return prev
+                    return prev + 50
+                })
             }
         }
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [limite]);
+    },[limite])
 
 
     return (
