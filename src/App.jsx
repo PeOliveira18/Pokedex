@@ -10,7 +10,9 @@ export const AppContainer = styled.div`
 
 function App() {
   return (
+    <AppContainer>
       <Home/>
+    </AppContainer>
   )
   
 }

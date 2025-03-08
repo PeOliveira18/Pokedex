@@ -39,7 +39,7 @@ function Home() {
 
 
     return (
-        <AppContainer>
+        <>
             <Header/>
             <BuscaPokemon pokemons={pokemons} setPokemonsFiltrados={setPokemonsFiltrados} />
             {pokemons.length === 0 && loading ? (
@@ -47,7 +47,7 @@ function Home() {
             ) : (
                 <PokemonsFiltrados pokemonsFiltrados={pokemonsFiltrados} />
             )}
-        </AppContainer>
+        </>
     );
 }
 
